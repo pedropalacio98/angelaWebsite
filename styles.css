@@ -1,0 +1,369 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    background: linear-gradient(45deg, #1e3c72, #2a5298);
+    background-size: 400% 400%;
+    animation: gradientBackground 15s ease infinite;
+    overflow-x: hidden;
+}
+
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Header */
+header {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.5s;
+}
+
+header h1 {
+    display: inline-block;
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.5em;
+    color: #fff;
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #f1c40f;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: #f1c40f;
+}
+
+/* Hero Section */
+#hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    animation: fadeIn 2s;
+}
+
+.hero-content h2 {
+    font-size: 4em;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    margin: 20px 0;
+    font-weight: 300;
+}
+
+.hero-content button {
+    padding: 15px 30px;
+    font-size: 1em;
+    color: #fff;
+    background: linear-gradient(45deg, #e67e22, #e74c3c);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.hero-content button:hover {
+    transform: scale(1.1);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('your-background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
+    z-index: 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Sections */
+section {
+    padding: 100px 50px;
+    min-height: 100vh;
+    position: relative;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: inherit;
+    transform: skewY(-3deg);
+    z-index: -1;
+}
+
+section:nth-child(even) {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 3em;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    width: 50px;
+    height: 5px;
+    background: #f1c40f;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -20px;
+}
+
+#about p, #contact p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* Projects Section */
+#projects .projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.project {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    width: calc(33% - 20px);
+    min-width: 280px;
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-content {
+    padding: 20px;
+}
+
+.project-content h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.project-content p {
+    font-size: 1em;
+    margin: 10px 0;
+}
+
+.project-content a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background 0.3s;
+}
+
+.project-content a:hover {
+    background: #2980b9;
+}
+
+/* Contact Section */
+#contact a {
+    color: #f1c40f;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+/* Scroll Animation */
+[data-aos] {
+    opacity: 0;
+    transition-property: transform, opacity;
+    transition-duration: 1s;
+}
+
+[data-aos="fade-up"] {
+    transform: translateY(20px);
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    nav {
+        display: none;
+    }
+
+    header h1 {
+        text-align: center;
+        width: 100%;
+    }
+
+    .hero-content h2 {
+        font-size: 3em;
+    }
+
+    section {
+        padding: 80px 20px;
+    }
+
+    .project {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .project {
+        width: 100%;
+    }
+}
+
+#about {
+    background: linear-gradient(135deg, #f39c12, #d35400);
+}
+
+#projects {
+    background: linear-gradient(135deg, #8e44ad, #2980b9);
+}
+
+#contact {
+    background: linear-gradient(135deg, #27ae60, #16a085);
+}
+
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --accent-color: #f1c40f;
+    --text-color: #fff;
+}
+
+body {
+    color: var(--text-color);
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+.hero-content button {
+    background: var(--primary-color);
+}
+
+.hero-content button:hover {
+    background: var(--secondary-color);
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 15px;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    transition: background 0.3s;
+}
+
+#back-to-top:hover {
+    background: var(--secondary-color);
+}
